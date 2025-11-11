@@ -1,18 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-################################################################################################
-# Prerequisite stuff                                                                           #
-################################################################################################
+clear
 
-#Making sure script was run with root
-if [ $(id -u) == "0" ]; then
-    echo "Running with root permissions"
+echo "Created by network-duck, Faith Lutheran Middle & High School, Las Vegas, NV, USA"
+echo "Last Modified on Friday, November 21st, 2025, 7:20am"
+echo "General Hardening Linux Scripts created for AFACP competition XVIII"
 
-#Not run with root - root is necessary for script so exit
-else
-    echo "Please run the script with root permissions."
-    exit
+# Ensure the script is being run as root
+if [ "$EUID" -ne 0 ]; then
+    echo "Please re-run the script with root permissions."
+    exit 1
 fi
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+unalias -a
 
 #Getting ubuntu version
 OSNAME=$(lsb_release -a | grep "Distributor ID" | cut -d $'\t' -f 2)
