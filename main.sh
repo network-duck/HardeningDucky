@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-
 clear
 
 echo "Created by network-duck, Faith Lutheran Middle & High School, Las Vegas, NV, USA"
 echo "Last Modified on Friday, November 21st, 2025, 7:20am"
-echo "General Hardening Linux Scripts created for AFACP competition XVIII"
+echo "General Hardening Linux Scripts for AFACP competition XVIII"
 
 # Ensure the script is being run as root
 if [ "$EUID" -ne 0 ]; then
